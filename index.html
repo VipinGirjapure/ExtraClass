@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h5>17 March</h5>
+    <h1>Variables</h1>
+    <ol>
+<li>Var</li>
+<li>let</li>
+<li>Const</li>
+    </ol>
+    <h2>Explain Var, Let and Const</h2>
+    <ul>
+        <h3>Var</h3>
+        <li>Var is a functional as well as Global Scope</li>
+        <li>Var can be reinitialized and redeclared</li>
+        <li>var can be modified later</li>
+    </ul>
+
+    <ul>
+        <h3>Let</h3>
+        <li>Let is a Block Scope</li>
+        <li>Let cannot be reinitialized and redeclared</li>
+        <li>Let can be modified later</li>
+    </ul>
+
+    <ul>
+        <h3>Const</h3>
+        <li>Const is a Block Scope</li>
+        <li>Const cannot be reinitialized and redeclared</li>
+        <li>Const cannot be modified later</li>
+    </ul>
+    <h2>What is Hoisting?</h2>
+    <p>Hoising is a phenemenon by which we can access vaiables and functions even before we initialize it.In case of var it is undefined but in case of let and const it throws a Reference Error.</p>
+
+    <h2>What is Temporal Dead Zone?</h2>
+    <p>It is the time between the hoisting and the initialization of variables. Even let and const are hoisted but they are in different space called Temporal Dead Zone.</p>
+
+    <h2>What are closures?</h2>
+    <p>
+        Closure is a function bundled together with its lexical(physical) environment. <br> 
+       <pre>
+        function outer(){
+            var num = 5;
+            function inner(){
+                console.log(num)
+            }
+            return inner
+        }
+
+        outer()() //5
+        
+        //we see 5 because inner forms Closure with outer.
+    </pre>
+
+        Here the function will try to access the variables in local scope,if they dont find it then it will search it in the outer scope and still if it fails to find it will search in gloabl scope and finally if it is not found then it will return undefined.
+    </p>
+
+    
+    <h5>21 March</h5>
+            
+    <h2>What is operator?</h2> 
+    <p>In JavaScript, an operator is a special symbol used to perform operations on operands (values and variables).</p>
+    <h2>JavaScript Operator Types</h2>
+    <P>Here is a list of different operators.</P>
+    
+    <ul>
+    <li>Arithmetic Operators</li>
+        <li>Assignment Operators</li>
+        <li>Comparison Operators</li>
+        <li>Logical Operators</li>
+        <li>Bitwise Operators</li>
+        <li>String Operators</li>
+    </ul>
+
+    <table>
+     <tr>
+         <th>Arithmetic operators</th>
+         <td>+</td>
+         <td>-</td>
+         <td>*</td>
+         <td>**</td>
+         <td>/</td>
+         <td>%</td>
+         <td>x++ or ++x </td>
+         <td>x-- or --x</td>
+       
+        </tr>
+     
+        <tr>
+        <th>Logical operators</th>
+         <td colspan="2">&&</td>
+         <td colspan="2">||</td>
+         <td colspan="2">!</td>
+        </tr>
+         
+ 
+<tr>
+  <th>Assignment operators</th>
+         <td>=</td>
+         <td>+=</td>
+         <td>-= </td>
+         <td>*=</td>
+         <td>/=</td>
+         <td>%=</td>
+         <td>**=</td>
+    </tr>
+
+     <tr>
+         <th>String Operators</th>
+         <td>+</td>
+         <!-- <td></td> -->
+        </tr>
+      
+      
+     <tr>
+        <th>Bitwise operators</th>
+
+          <td>&</td>
+          <td>|</td>
+          <td>^ (XOR)</td>
+          <td>~ (NOT)</td>
+          
+     </tr>
+     
+     <tr>
+        <th>Comparision operators</th>
+        <td>==</td>
+        <td>===</td>
+        <td>!=</td>
+        <td>!==</td>
+        <td>></td>
+        <td>>=</td>
+        <td><</td>
+        <td><=</td>
+    </tr>
+    </table>
+
+    <h5>22 March</h5>
+    <h3>Decision Making</h3>
+    <h5>23 March</h5>
+    <h3>Loops</h3>
+    <h3>Strings</h3>
+    <p>It is Collection of characters.</p>
+    <h3>String Length:</h3>
+        <p>Length in a string tells the length of the string ie. how many characters are present in the string</p>
+
+        <pre>
+            I/p:
+            var str="hello";
+            console.log(str.length);
+
+            O/p:
+            5
+        </pre>
+
+        <h3>charAt:</h3>
+
+        <p>charAt returns the character of the specified index</p>
+
+        <pre>
+            I/p:
+            var str="hello"
+            console.log(charAt(1));
+
+            O/p:
+            e
+        </pre>
+
+        <h3>IndexOf:</h3>
+        <p>indexOf is a method used to return the index of the character in a string.</p>
+        <pre>
+            I/p:
+            var str="hello";
+            console.log(str.indexOf("e"));
+
+            O/p:
+            1
+        </pre>
+
+        <h3>Split:</h3>
+        <p>split method returns the array of substrings.</p>
+
+        <pre>
+            I/p:
+            var str="hello";
+            var data=str.split("");
+            console.log(data);
+
+            O/p:
+            data[0]: "h"
+            data[1]: "e"
+            data[2]: "l"
+            data[3]: "l"
+            data[4]: "o"
+        </pre>
+        <h3>Reverse:</h3>
+        <p>string reverse is uses to reverse the original string.</p>
+
+        <pre>
+            I/p:
+            var str="hello";
+            var arr=str.split("");
+            var revArr=arr.reverse();
+            var revArr=revArr.join("");
+            console.log(revArr);
+
+            O/p:
+            olleh
+        </pre>
+
+        <h3>Join:</h3>
+        <p>It will join array of individual characters to a single string</p>
+
+        <pre>
+            I/p:
+            var arr=["h","e","l","l","o"];
+            var newArr=arr.join("");
+            console.log(newArr);
+
+            O/p:
+            hello
+        </pre>
+
+        <h3>Trim:</h3>
+        <p>trim is a method to remove white spaces in a string.</p>
+
+        <pre>
+            I/p:
+            var str="hello  ";
+            var newStr=str.trim();
+            console.log(newStr.length);//5
+            console.log(str.length); //7
+    
+
+
+        </pre>
+
+        <h3>Slice:</h3>
+        <p>slice is method in string is used to extract the part of the string and it does not modify the original string.</p>\
+
+        <pre>
+            I/p:
+            var str="hello";
+            var newStr=str.slice(0,3);
+            console.log(newStr);
+
+            O/p:
+            hel
+
+        </pre>
+
+        <h3>splice:</h3>
+
+        <p>Splice is a method used to add/remove array elements.It also modifies the original original.</p>
+
+
+        <pre>
+            I/p:
+
+            Add elemnts:
+            var arr=["hello","hogwards","harry","potter"];
+            arr.splice(3,0,"dumbledore");
+            console.log(arr);
+
+            O/p:
+            ['hello', 'hogwards', 'harry', 'dumbledore', 'potter'];
+
+            I/p:
+
+            Remove elements:
+
+            var arr=["hello","hogwards","harry","potter"];
+            arr.splice(0,1);
+            console.log(arr);          //  ['hogwards', 'harry', 'potter']
+            </pre>
+
+            <h3>Concatenation:</h3>
+
+            <p>concatenation is a method is used to add two string to make a single string.</p>
+
+            <pre>
+            
+                var str1="hello";
+                var str2="world";
+                var str3=str1.concat(" "+str2);
+                console.log(str3); //hello world
+            </pre>
+
+            <h3>Replace:</h3>
+            <p>Replace is method which only replaces the first string in the original string.</p>
+
+            <pre>
+                var str="hello world world";
+                var str=str.replace("world","earth");
+                console.log(str); //hello earth world
+            </pre>
+
+            <h3>ReplaceAll:</h3>
+
+            <p>replaceAll is a method which replaces all occurences of a string in the original string.</p>
+
+            <pre>
+            
+                var str="hello world world";
+                var str=str.replace("world","earth");
+                console.log(str); // hello earth earth
+            </pre>
+
+            <h3>toLowerCase:</h3>
+            <p>toLowercase in a string is a method which converts the uppercase string to lowercase string.</p>
+
+            <pre>
+                I/p:
+                var str="HeLLo";
+                str=str.toLowerCase();
+                console.log(str);  //hello
+            </pre>
+
+            <h3>toUpperCase:</h3>
+
+            <p>toUpperCase is a method which converts the lowercase string to uppercase string.</p>
+
+            <pre>
+
+                var str="hello";
+                str=str.toUpperCase();
+                console.log(str); //HELLO
+            </pre>
+               
+
+<script src="index.js"></script>
+</body>
+</html>
