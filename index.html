@@ -16,7 +16,7 @@
 <li>let</li>
 <li>Const</li>
     </ol>
-    <h2>Explain Var, Let and Const</h2>
+    <h3>Explain Var, Let and Const</h3>
     <ul>
         <h3>Var</h3>
         <li>Var is a functional as well as Global Scope</li>
@@ -37,15 +37,16 @@
         <li>Const cannot be reinitialized and redeclared</li>
         <li>Const cannot be modified later</li>
     </ul>
-    <h2>What is Hoisting?</h2>
+    <h3>What is Hoisting?</h3>
     <p>Hoising is a phenemenon by which we can access vaiables and functions even before we initialize it.In case of var it is undefined but in case of let and const it throws a Reference Error.</p>
 
-    <h2>What is Temporal Dead Zone?</h2>
+    <h3>What is Temporal Dead Zone?</h3>
     <p>It is the time between the hoisting and the initialization of variables. Even let and const are hoisted but they are in different space called Temporal Dead Zone.</p>
 
-    <h2>What are closures?</h2>
+    <h3>What are closures?</h3>
     <p>
-        Closure is a function bundled together with its lexical(physical) environment. <br> 
+    </p>
+    Closure is a function bundled together with its lexical(physical) environment. <br> 
        <pre>
         function outer(){
             var num = 5;
@@ -58,17 +59,19 @@
         outer()() //5
         
         //we see 5 because inner forms Closure with outer.
+        
+        Here the function will try to access the variables in local scope,
+        if they dont find it then it will search it in the outer scope and
+         still if it fails to find it will search in gloabl scope 
+         and finally if it is not found then it will return undefined.
     </pre>
-
-        Here the function will try to access the variables in local scope,if they dont find it then it will search it in the outer scope and still if it fails to find it will search in gloabl scope and finally if it is not found then it will return undefined.
-    </p>
 
     
     <h5>21 March</h5>
             
-    <h2>What is operator?</h2> 
+    <h3>What is operator?</h3> 
     <p>In JavaScript, an operator is a special symbol used to perform operations on operands (values and variables).</p>
-    <h2>JavaScript Operator Types</h2>
+    <h3>JavaScript Operator Types</h3>
     <P>Here is a list of different operators.</P>
     
     <ul>
@@ -77,7 +80,9 @@
         <li>Comparison Operators</li>
         <li>Logical Operators</li>
         <li>Bitwise Operators</li>
+        <li>Ternary Operators</li>
         <li>String Operators</li>
+        <li>Comma Operators</li>
     </ul>
 
     <table>
@@ -89,15 +94,15 @@
          <td>**</td>
          <td>/</td>
          <td>%</td>
-         <td>x++ or ++x </td>
+         <td>x++ or ++x</td>
          <td>x-- or --x</td>
        
         </tr>
      
         <tr>
         <th>Logical operators</th>
-         <td colspan="2">&&</td>
-         <td colspan="2">||</td>
+         <td colspan="3">&&</td>
+         <td colspan="3">||</td>
          <td colspan="2">!</td>
         </tr>
          
@@ -110,23 +115,17 @@
          <td>*=</td>
          <td>/=</td>
          <td>%=</td>
-         <td>**=</td>
+         <td colspan="2">**=</td>
     </tr>
 
-     <tr>
-         <th>String Operators</th>
-         <td>+</td>
-         <!-- <td></td> -->
-        </tr>
       
       
-     <tr>
         <th>Bitwise operators</th>
 
-          <td>&</td>
-          <td>|</td>
-          <td>^ (XOR)</td>
-          <td>~ (NOT)</td>
+          <td colspan="2">&</td>
+          <td colspan="2">|</td>
+          <td colspan="2">^ (XOR)</td>
+          <td colspan="2">~ (NOT)</td>
           
      </tr>
      
@@ -141,10 +140,158 @@
         <td><</td>
         <td><=</td>
     </tr>
+
+    <tr>
+        <th>Ternary Operators</th>
+        <td colspan="8">(5===5) ? 'a':'b'  //a </td>
+        <!-- <td></td> -->
+       </tr>
+   <tr>
+    <tr>
+        <th>String Operators</th>
+        <td colspan="8">+</td>
+        <!-- <td></td> -->
+       </tr>
+   <tr>
+    <tr>
+        <th>Comma Operators</th>
+        <td colspan="8">,</td>
+        <!-- <td></td> -->
+       </tr>
+   <tr>
+   
     </table>
 
     <h5>22 March</h5>
     <h3>Decision Making</h3>
+    <ol>
+    <li>if statement</li>
+        <li>if...else statement</li>
+        <li>if...else if...else statement</li>
+    </ol>
+        
+    <h3>1.if statement</h3>
+    <p>Syntax
+        <pre>if(condition){
+      //body of if  }
+        </pre>
+    <p>The 'if' statement evaluates the condition inside the parenthesis ().
+        <br>
+        <ul>
+            <li> If the condition is evaluated to <b>true</b>, the code inside the body of 'if' is executed.</li>
+         <li>If the condition is evaluated to <b>false</b>, the code inside the body of 'if' is skipped.</li>
+    </ul>
+<img src="https://cdn.programiz.com/sites/tutorial2program/files/js-if-statement_0.png" alt="if else condition">
+<pre> Example:
+    // check if the number is positive
+
+    const number = 2;
+    
+    // check if number is greater than 0
+    if (number > 0) {
+     // the body of the if statement
+      console.log("The number is positive");
+    }
+    
+    //"The number is positive"
+</pre>
+
+<h3>2.if...else statement</h3>
+<p>Syntax</p>
+<pre>
+    if (condition) {
+    // block of code if condition is true
+} else {
+   // block of code if condition is false
+}
+</pre>
+<p>If..else statement evaluates the condition inside the paranthesis().</p>
+<ul><p>if the condition is <b>true</b></p>
+    <li>the code inside 'if' condition is executed.</li>
+    <p>and  if the condition is <b>false</b></p> 
+    <li>the code inside the body of 'else' is executed</li>
+</ul>
+
+<img src="https://cdn.programiz.com/sites/tutorial2program/files/js-if-else-statement.png" alt="if else statement">
+
+<h3>3.if...else..if statement</h3>
+<p>Syntax</p>
+<pre>
+    if (condition1) {
+        // code block 1
+    } else if (condition2){
+        // code block 2
+    } else {
+        // code block 3
+    }
+</pre>
+<ul>
+    <li>if condition1 is <b>true</b> then 'code block 1' statement is executed.</li>
+<li>if condition1 is <b>false</b> then 'code block 2' statement is executed. </li>
+<li>if 'else if' condition is also <b>false</b> then 'code block 3' statement is executed .</li>
+</ul>
+<pre>
+    Example:
+    // check if the number if positive, negative or zero
+    
+    const number =-2;
+
+// check if number is greater than 0
+if (number > 0) {
+    console.log("The number is positive");
+}
+// check if number is 0
+else if (number == 0) {
+  console.log("The number is 0");
+}
+// if number is neither greater than 0, nor zero
+else {
+    console.log("The number is negative");
+}
+
+output:
+//The number is negative
+    
+</pre>
+<img src="https://cdn.programiz.com/sites/tutorial2program/files/js-if-else-if-statement_0.png" alt="if else ladder">
+
+<h3>Switch Case</h3>
+<p>The 'switch' statement evaluates an expression and executes the corresponding body that matches the expression's result.</p>
+<p>The syntax of the 'switch' statement is:</p>
+<pre>switch(variable/expression) {
+    case value1:  
+        // body of case 1
+        break;
+
+    case value2:  
+        // body of case 2
+        break;
+
+    case valueN:
+        // body of case N
+        break;
+
+    default:
+        // body of default
+}</pre>
+<ul>
+   <p> The switch statement evaluates a variable/expression inside parentheses ().</p>
+<li>
+If the result of the expression is equal to value1, its body is executed.
+</li>
+<li>
+    If the result of the expression is equal to value2, its body is executed.
+</li>
+<li>
+This process goes on. If there is no matching case, the default body executes.
+</li>
+<li>If the break statement is encountered, the switch statement ends.</li>
+
+</ul>
+
+
+
+
     <h5>23 March</h5>
     <h3>Loops</h3>
     <h3>Strings</h3>
@@ -152,8 +299,8 @@
     <h3>String Length:</h3>
         <p>Length in a string tells the length of the string ie. how many characters are present in the string</p>
 
+        
         <pre>
-          
             var str="hello";
             console.log(str.length);//5
         </pre>
@@ -191,8 +338,8 @@
         <h3>Reverse:</h3>
         <p>string reverse is uses to reverse the original string.</p>
 
+        
         <pre>
-
             var str="hello";
             var arr=str.split("");
             var revArr=arr.reverse();
@@ -217,13 +364,13 @@
             var newStr=str.trim();
             console.log(newStr.length);//5
             console.log(str.length); //7
+        </pre>
     
 
 
-        </pre>
 
         <h3>Slice:</h3>
-        <p>slice is method in string is used to extract the part of the string and it does not modify the original string.</p>\
+        <p>slice is method in string is used to extract the part of the string and it does not modify the original string.</p>
 
         <pre>
             var str="hello";
@@ -277,8 +424,8 @@
 
             <p>replaceAll is a method which replaces all occurences of a string in the original string.</p>
 
-            <pre>
             
+            <pre>
                 var str="hello world world";
                 var str=str.replace("world","earth");
                 console.log(str); // hello earth earth
@@ -303,7 +450,146 @@
                 str=str.toUpperCase();
                 console.log(str); //HELLO
             </pre>
-               
+
+<h5>4 April</h5>
+
+
+<h3>DOM Manipulation</h3>
+
+<h4>Accessing Elements </h4>
+<ul>
+    <li>By Tag Name</li>
+    <li>By Id</li>
+    <li>By Class Name </li>
+    <li>By Name</li>
+    <li>By Attribute Name</li>
+    <li>querySelector</li>
+    <li>querySelectorAll</li>
+</ul>
+    
+<h3>Accessing Elements By Tag Name</h3>
+<p>'getElementsByTagName()' is a dom method to allows you to select an element by its tag name.</p>
+<p>Syntax:</p>
+<pre>let elements = document.getElementsByTagName(tagName);</pre>
+
+<h3>Accessing Elements By Id</h3>
+<p>'getElementById()' is a dom method to allows you to select an element by its id.</p>
+<p>Syntax:</p>
+<pre>
+let element = document.getElementById(id);
+</pre>
+
+<h3>Accessing Elements By Class Name</h3>
+<p>'getElementByClassName()' is a dom method to allows you to select an element by its class name.</p>
+<p>Syntax:</p>
+<pre>
+   1. let elements = document.getElementsByClassName(classNames)
+   2. let elements = parentElement.getElementsByClassName(classNames)</pre>
+
+
+   <h3>Accessing Elements By querySelector</h3>
+   <p>'querySelector()' targets first occurence of given tag.</p>
+   <p>Syntax:</p>
+   <pre>
+       let elements = document.querySelector('div')
+       console.log(elements)
+
+       //this will returns first 'div' tag. 
+   </pre>
+
+   <h3>Accessing Elements By querySelectorAll</h3>
+   <p>'querySelectorAll()' targets all occurence of given tag.</p>
+   <p>Syntax:</p>
+<pre>
+    let elements = document.querySelectorAll('div')
+    console.log(elements)
+    //this returns NodeList of all 'div tags.'
+
+//AND
+
+//you can give a index to target tag's index
+
+let elements = document.querySelectorAll('div')[1]
+console.log(elements)
+
+//this return div tag on 1 index in the NodeList of div's.
+</pre>
+<p></p>
+
+   <br>
+   <br>
+   <h3>DOM Element innerText and innerHTML</h3> 
+
+   <h3>1.DOM Element innerText</h3>
+   <p>The 'innerText' property sets or returns the text content of an element.</p>
+   <pre>let text = document.getElementById(Id).innerText
+
+    //this returns inside text of tag which id we have given.
+    // we can use DOM targeting methods with innerText.
+   </pre>
+   
+  
+   <h3>2.DOM Element innerHTML</h3>
+   <p>The 'innerHTML' property sets or returns the HTML content (inner HTML) of an element.</p>
+   <pre>
+       //Get
+    let html = document.getElementById("Hi").innerHTML;
+
+    //this will return html content of tag which has 'Hi' id.
+
+    //set
+    document.getElementById("demo").innerHTML = "I have changed!";
+
+    //this will change inner content of element which has id 'demo'.
+   </pre>
+
+   <h3> DOM - Changing CSS</h3>
+
+   <p>DOM allows JavaScript to change the style of HTML elements.</p>
+<p>Syntax:</p>
+<pre>
+    document.getElementById(id).style.property = new style
+</pre>
+<p>Example:</p>
+<pre>document.getElementById("p").style.color = "blue";
+
+    //this will change font color to 'blue' of text inside tag which has 'p' Id.
+</pre>
+
+<h3>
+    Creating A HTML Tag/Element Using DOM
+</h3>
+<p>To create a DOM element, you use the createElement() method.</p>
+<p>
+Syntax :
+</p>
+
+<pre>
+const element = document.createElement(htmlTag);
+</pre>
+<p>Example:</p>
+<pre>
+ //This creates a new 'div' element:
+
+        const e = document.createElement('div');
+
+//And fill the 'div' element with any HTML content:
+
+    e.innerHTML = 'JavaScript DOM';
+    
+//And attach the 'div' element to the DOM tree by using the appendChild() method:
+
+    document.body.appendChild(e);
+
+
+ //Besides using the innerHTML property, you can use the DOM methods to create text nodes and append the text nodes to the new element:
+ //After that, you can use the appendChild() method to attach the new element to the DOM tree.
+ 
+ var textnode = document.createTextNode('JavaScript DOM');
+ e.appendChild(textnode); 
+</pre>
+
+
 
 <script src="index.js"></script>
 </body>
